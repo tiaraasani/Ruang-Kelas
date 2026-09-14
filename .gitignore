@@ -1,0 +1,14 @@
+# Environment and secrets
+/.env
+
+# Runtime data
+/storage/logs/*
+!/storage/logs/.gitkeep
+/storage/uploads/*/*
+!/storage/uploads/*/.gitkeep
+
+# Editors and OS files
+/.idea/
+/.vscode/
+Thumbs.db
+.DS_Store
