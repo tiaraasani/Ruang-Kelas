@@ -1,0 +1,14 @@
+# Web root of the application. Routes every non-file request to the front controller.
+Options -Indexes -MultiViews
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Never serve dot files (.htaccess, .env, ...).
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

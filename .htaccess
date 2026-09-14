@@ -1,0 +1,12 @@
+# Used only when the project root (not public/) is the directory exposed by the web server,
+# e.g. when the repository is dropped into htdocs/. Forwards everything to public/ and
+# blocks direct access to application internals.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(app|storage|database)(/|$) - [F,L]
+    RewriteRule ^\.(env|git) - [F,L]
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>
