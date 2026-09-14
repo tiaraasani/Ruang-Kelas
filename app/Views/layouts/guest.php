@@ -1,0 +1,35 @@
+<?php
+/**
+ * Layout for unauthenticated pages (login, registration, errors).
+ *
+ * @var string $content
+ * @var string $title
+ * @var string $bodyClass
+ */
+?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f3b38">
+    <title><?= e($title ?? '') ?> | <?= e(config('app.name')) ?></title>
+
+    <script src="<?= asset('js/theme.js') ?>"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="<?= asset('css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= asset('font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
+    <link href="<?= asset('css/app.css') ?>" rel="stylesheet">
+</head>
+<body class="<?= e($bodyClass ?? 'auth-page') ?>">
+    <?= $content ?>
+
+    <script src="<?= asset('js/jquery.min.js') ?>"></script>
+    <script src="<?= asset('js/bootstrap.min.js') ?>"></script>
+    <script src="<?= asset('js/app.js') ?>"></script>
+</body>
+</html>

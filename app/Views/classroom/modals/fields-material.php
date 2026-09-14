@@ -1,0 +1,19 @@
+<?php
+/** @var bool $withFile */
+$withFile = $withFile ?? false;
+?>
+<div class="form-group">
+    <label>Judul Materi</label>
+    <input type="text" name="title" class="form-control" required minlength="3" maxlength="200">
+</div>
+<div class="form-group">
+    <label>Deskripsi Materi</label>
+    <textarea name="description" class="form-control" rows="4" maxlength="2000" required></textarea>
+</div>
+<?php if ($withFile): ?>
+    <div class="form-group">
+        <label>File Materi</label>
+        <input type="file" name="file" class="form-control" required>
+        <p class="help-block">Maksimal 2 MB. Tipe: <?= e(implode(', ', (array) config('uploads.allowed_extensions'))) ?>.</p>
+    </div>
+<?php endif; ?>
